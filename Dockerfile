@@ -26,7 +26,7 @@ WORKDIR /app
 COPY . /app
 
 # Expose Render's default port
-EXPOSE 10000
+EXPOSE 3838
 
 # Run your app directly
 CMD ["Rscript", "app.R"]
