@@ -1,0 +1,42 @@
+[
+  {
+    "email": "superadmin@fms.io.vn",
+    "password": "superadmin",
+    "role": "superadmin"
+  },
+  {
+    "email": "fund.manager@fms.io.vn",
+    "password": "fund",
+    "role": "fund_manager"
+  },
+  {
+    "email": "fund.trader@fms.io.vn",
+    "password": "trader",
+    "role": "fund_trader"
+  },
+  {
+    "email": "demo1.introducer@fms.io.vn",
+    "password": "introducer",
+    "role": "introducer"
+  },
+  {
+    "email": "demo2.introducer@fms.io.vn",
+    "password": "introducer",
+    "role": "introducer"
+  },
+  {
+    "email": "demo1.investor@fms.io.vn",
+    "password": "demo1",
+    "role": "investor"
+  },
+  {
+    "email": "demo2.investor@fms.io.vn",
+    "password": "demo2",
+    "role": "investor"
+  },
+  {
+    "email": "demo3.investor@fms.io.vn",
+    "password": "demo3",
+    "role": "investor"
+  }
+]

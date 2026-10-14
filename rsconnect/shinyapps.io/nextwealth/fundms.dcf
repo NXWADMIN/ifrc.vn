@@ -1,0 +1,10 @@
+name: fundms
+title:
+username: nextwealth
+account: nextwealth
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 18144473
+bundleId: 12678090
+url: https://nextwealth.shinyapps.io/fundms/
+version: 1
