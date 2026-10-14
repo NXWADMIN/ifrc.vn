@@ -1,10 +1,10 @@
-FROM rocker/r-ver:latest
+FROM rocker/r-ver:bookworm
 
-# Use pre-compiled binaries so packages install instantly without errors
+# Force R to use pre-compiled Linux binaries from Posit
 RUN echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/bookworm/latest'))" >> /usr/local/lib/R/etc/Rprofile.site
 
-# Explicitly install shiny and httpuv
-RUN R -e "install.packages(c('shiny', 'httpuv'))"
+# Explicitly install shiny and httpuv with dependencies
+RUN R -e "install.packages(c('shiny', 'httpuv'), dependencies = TRUE)"
 
 # Copy your app files into the container
 WORKDIR /app
