@@ -1,6 +1,9 @@
 FROM rocker/r-ver:latest
 
-# Install system dependencies required by R packages like curl, openssl, xml2, and sass
+# Force R to use pre-compiled binaries to avoid compilation errors
+RUN echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/jammy/latest'))" >> /usr/local/lib/R/etc/Rprofile.site
+
+# Install system dependencies including zlib
 RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
@@ -11,10 +14,11 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libpng-dev \
     libtiff5-dev \
-    libjpeg-dev
+    libjpeg-dev \
+    zlib1g-dev
 
-# Install Shiny and essential tidyverse/htmltools packages
-RUN R -e "install.packages(c('shiny', 'sass'), repos='https://cloud.r-project.org/')"
+# Install Shiny, Sass, and Bslib packages
+RUN R -e "install.packages(c('shiny', 'sass', 'bslib', 'httpuv'), repos='https://cloud.r-project.org/')"
 
 # Copy your app files into the container
 WORKDIR /app
