@@ -16,7 +16,9 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libpng-dev \
     libtiff5-dev \
-    libjpeg-dev
+    libjpeg-dev\
+    libsodium-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install all core R packages safely as binaries
 RUN R -e "install.packages(c('shiny', 'sass', 'bslib', 'fs', 'httpuv', 'DBI', 'RSQLite', 'sodium', 'plotly'))"
