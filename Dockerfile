@@ -29,4 +29,4 @@ COPY . /app
 EXPOSE 3838
 
 # Run your app directly
-CMD ["Rscript", "app.R"]
+CMD ["R", "-e", "shiny::runApp('/app', host='0.0.0.0', port=as.numeric(Sys.getenv('PORT', 3838)))"]
