@@ -4,24 +4,24 @@ library(shiny)
 library(bslib)
 
 # Explicitly register static resource folders for Docker environments
-if (dir.exists("www")) {
-  shiny::addResourcePath(prefix = "www", directoryPath = "www")
-}
-if (dir.exists("brand")) {
-  shiny::addResourcePath(prefix = "brand", directoryPath = "brand")
-}
-if (dir.exists("i18n")) {
-  shiny::addResourcePath(prefix = "i18n", directoryPath = "i18n")
-}
-if (dir.exists("R")) {
-  shiny::addResourcePath(prefix = "R", directoryPath = "R")
-}
-if (dir.exists("screenshots")) {
-  shiny::addResourcePath(prefix = "screenshots", directoryPath = "screenshots")
-}
-if (dir.exists("tools")) {
-  shiny::addResourcePath(prefix = "tools", directoryPath = "tools")
-}
+# if (dir.exists("www")) {
+#   shiny::addResourcePath(prefix = "www", directoryPath = "www")
+# }
+# if (dir.exists("brand")) {
+#   shiny::addResourcePath(prefix = "brand", directoryPath = "brand")
+# }
+# if (dir.exists("i18n")) {
+#   shiny::addResourcePath(prefix = "i18n", directoryPath = "i18n")
+# }
+# if (dir.exists("R")) {
+#   shiny::addResourcePath(prefix = "R", directoryPath = "R")
+# }
+# if (dir.exists("screenshots")) {
+#   shiny::addResourcePath(prefix = "screenshots", directoryPath = "screenshots")
+# }
+# if (dir.exists("tools")) {
+#   shiny::addResourcePath(prefix = "tools", directoryPath = "tools")
+# }
 
 fms_theme <- bs_theme(
   version = 5, primary = "#c9962e", secondary = "#2f6bff",
@@ -136,11 +136,11 @@ server <- function(input, output, session) {
   landing_server(input, output, session, st, go, me, act)
 }
 
-# shinyApp(ui, server)
+shinyApp(ui, server)
 
 # Bind to 0.0.0.0 and listen on Render's PORT
-shiny::runApp(
-  shinyApp(ui, server),
-  host = "0.0.0.0",
-  port = as.numeric(Sys.getenv("PORT", "3838"))
-)
+# shiny::runApp(
+#   shinyApp(ui, server),
+#   host = "0.0.0.0",
+#   port = as.numeric(Sys.getenv("PORT", "3838"))
+# )
