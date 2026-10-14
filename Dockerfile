@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev
 
 # Install all core R packages safely as binaries
-RUN R -e "install.packages(c('shiny', 'sass', 'bslib', 'fs', 'httpuv', 'DBI', 'RSQLite', ‘sodium’))"
+RUN R -e "install.packages(c('shiny', 'sass', 'bslib', 'fs', 'httpuv', 'DBI', 'RSQLite', 'sodium'))"
 
 # Copy your app files into the container
 WORKDIR /app
