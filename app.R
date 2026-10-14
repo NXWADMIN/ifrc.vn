@@ -3,6 +3,26 @@
 library(shiny)
 library(bslib)
 
+# Explicitly register static resource folders for Docker environments
+if (dir.exists("www")) {
+  shiny::addResourcePath(prefix = "www", directoryPath = "www")
+}
+if (dir.exists("brand")) {
+  shiny::addResourcePath(prefix = "brand", directoryPath = "brand")
+}
+if (dir.exists("i18n")) {
+  shiny::addResourcePath(prefix = "i18n", directoryPath = "i18n")
+}
+if (dir.exists("R")) {
+  shiny::addResourcePath(prefix = "R", directoryPath = "R")
+}
+if (dir.exists("screenshots")) {
+  shiny::addResourcePath(prefix = "screenshots", directoryPath = "screenshots")
+}
+if (dir.exists("tools")) {
+  shiny::addResourcePath(prefix = "tools", directoryPath = "tools")
+}
+
 fms_theme <- bs_theme(
   version = 5, primary = "#c9962e", secondary = "#2f6bff",
   base_font = font_google("Inter", local = FALSE), font_scale = 0.92,
