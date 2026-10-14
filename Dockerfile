@@ -1,7 +1,7 @@
-FROM rocker/r-ver:bookworm
+FROM rocker/r-ver:latest
 
-# Force R to use pre-compiled Linux binaries from Posit
-RUN echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/bookworm/latest'))" >> /usr/local/lib/R/etc/Rprofile.site
+# Force R to use pre-compiled Linux binaries
+RUN echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/jammy/latest'))" >> /usr/local/lib/R/etc/Rprofile.site
 
 # Explicitly install shiny and httpuv with dependencies
 RUN R -e "install.packages(c('shiny', 'httpuv'), dependencies = TRUE)"
